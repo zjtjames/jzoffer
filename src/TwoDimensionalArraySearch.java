@@ -7,17 +7,29 @@
 请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
  */
 public class TwoDimensionalArraySearch {
-    public boolean Find(int target, int [][] array) {
-        // 行数m 列数n 总数q
-        int q = array.length * array[0].length;
-        int i =
-        while (target != )
-
+    public static boolean Find(int target, int [][] array) {
+        // 行数m 列数n
+        int m = array.length;
+        int n = array[0].length;
+        for (int i = 0; i < m; i++) {
+            int lo = 0;
+            int hi = n - 1;
+            while (lo <= hi) {
+                int mid = (lo + hi) / 2;
+                if (target == array[i][mid]) {
+                    return true;
+                } else if (target > array[i][mid]) {
+                    lo = mid + 1;
+                } else {
+                    hi = mid - 1;
+                }
+            }
+        }
         return false;
     }
 
     public static void main(String[] args) {
-        int i = 3;
-        System.out.println(i/2);
+        int[][] a = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
+        System.out.println(Find(7, a));
     }
 }
