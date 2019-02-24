@@ -5,6 +5,7 @@
 import java.util.ArrayList;
 
 /**
+ * 从尾到头打印链表：ArrayList
  * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList
  */
 public class PrintListFromTailToHead {
@@ -12,6 +13,7 @@ public class PrintListFromTailToHead {
     private class ListNode {
         int val;
         ListNode next = null;
+
         ListNode(int val) {
             this.val = val;
         }
