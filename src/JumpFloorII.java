@@ -16,6 +16,7 @@ public class JumpFloorII {
             for (int i = 1; i < target; i++) {
                 sum += JumpFloorII(i);
             }
+            // +1是因为可以直接跳到最后一级
             return sum + 1;
         }
     }
