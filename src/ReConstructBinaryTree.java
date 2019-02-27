@@ -51,15 +51,15 @@ public class ReConstructBinaryTree {
     public static void main(String[] args) {
         int a[] = {1, 2, 3, 4};
         int b[] = {4, 2, 3, 1};
-        System.out.println(new ReConstructBinaryTree().reConstructBinaryTree(a, b));
+//        System.out.println(new ReConstructBinaryTree().reConstructBinaryTree(a, b));
 //        int c[] = Arrays.copyOfRange(a, 0, 1);
 //        for (int i = 0; i < c.length; i++) {
 //            System.out.println(c[i]);
 //        }
 //        int d[] = {2, 3, 4};
-//        int c[] = Arrays.copyOfRange(d, 1, 2);
-//        for (int num : c) {
-//            System.out.println(num);
-//        }
+        int c[] = Arrays.copyOfRange(a, 1, 2);
+        for (int num : c) {
+            System.out.println(num);
+        }
     }
 }
