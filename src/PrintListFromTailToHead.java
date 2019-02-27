@@ -5,7 +5,7 @@
 import java.util.ArrayList;
 
 /**
- * 从尾到头打印链表：ArrayList
+ * 从尾到头打印链表：辅助空间ArrayList
  * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList
  */
 public class PrintListFromTailToHead {
