@@ -5,7 +5,7 @@
 import java.util.Stack;
 
 /**
- * 用两个栈实现队列：pop()时，要先从stack2取，知道取空，若stack2为空，才把stack1的元素一次性装入stack2
+ * 用两个栈实现队列：pop()时，要先从stack2取，直到取空，若stack2为空，才把stack1的元素一次性装入stack2
  * 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
  */
 public class QueueByStack {
