@@ -4,6 +4,7 @@
 
 import java.util.Arrays;
 
+import base.*;
 /**
  * 重建二叉树: 递归。前序是根左右，中序是左右根。pre[0]就是根，在in中找到pre[0],左边是左，右边是右，再根据长度在pre中切出左和右，然后递归。
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
@@ -12,15 +13,6 @@ import java.util.Arrays;
  */
 public class ReConstructBinaryTree__ {
 
-    private class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
     public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
         TreeNode treeNode = new TreeNode(pre[0]);
         if (pre.length == 1) {

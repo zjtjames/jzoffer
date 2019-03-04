@@ -2,6 +2,7 @@
  * created by Zheng Jiateng on 2019/2/28.
  */
 
+import base.*;
 /**
  * 二叉树的镜像：
  * 操作给定的二叉树，将其变换为源二叉树的镜像。
@@ -19,15 +20,6 @@
   11 9 7  5
  */
 public class Mirror {
-    public class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
 
     public void Mirror(TreeNode root) {
         if (root != null) {

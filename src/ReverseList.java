@@ -4,19 +4,12 @@
 
 import java.util.ArrayList;
 
+import base.*;
 /**
  * 反转链表：输入一个链表，反转链表后，输出新链表的表头。
  */
 public class ReverseList {
 
-    private class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
 
     public ListNode reverseList(ListNode head) {
         if (head == null) {

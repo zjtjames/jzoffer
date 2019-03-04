@@ -4,20 +4,12 @@
 
 import java.util.ArrayList;
 
+import base.*;
 /**
  * 从尾到头打印链表：辅助空间ArrayList
  * 输入一个链表，按链表值从尾到头的顺序返回一个ArrayList
  */
 public class PrintListFromTailToHead {
-
-    private class ListNode {
-        int val;
-        ListNode next = null;
-
-        ListNode(int val) {
-            this.val = val;
-        }
-    }
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         ArrayList<Integer> arrayList1 = new ArrayList<>();

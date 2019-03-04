@@ -4,22 +4,14 @@
 
 import java.util.ArrayList;
 
+import base.*;
+
 /**
  * 从上往下打印二叉树 ：层序遍历 用队列实现
  * 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
  */
 public class PrintFromTopToBottom__ {
 
-    public class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
-
-        public TreeNode(int val) {
-            this.val = val;
-
-        }
-    }
 
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
         if (root == null) {
