@@ -3,6 +3,8 @@
  */
 
 import java.util.ArrayList;
+import java.util.Comparator;
+
 import base.*;
 
 /**
@@ -17,6 +19,18 @@ public class FindPath {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         ArrayList<Integer> path = new ArrayList<>();
         findAllPath(root, target, path, result);
+        result.sort(new Comparator<ArrayList<Integer>>() {
+            @Override
+            public int compare(ArrayList<Integer> o1, ArrayList<Integer> o2) {
+                if (o1.size() == o2.size()) {
+                    return 0;
+                } else if (o1.size() < o2.size()) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        });
         return result;
     }
 
@@ -28,7 +42,9 @@ public class FindPath {
             // 这一步是精髓 只有到了叶结点才sum
             boolean ifLeaf = root.left == null && root.right == null;
             if (ifLeaf && sumList(path) == target) {
-                result.add(path);
+                ArrayList<Integer> listCopy;
+                listCopy = (ArrayList<Integer>)path.clone();
+                result.add(listCopy);
             }
             path.remove(path.size() - 1);
         }
@@ -48,8 +64,8 @@ public class FindPath {
         TreeNode treeNode4 = new TreeNode(4);
         TreeNode treeNode7 = new TreeNode(7);
         TreeNode treeNode12 = new TreeNode(12);
-        treeNode10.left = treeNode5;
-        treeNode10.right = treeNode12;
+        treeNode10.left = treeNode12;
+        treeNode10.right = treeNode5;
         treeNode5.left = treeNode4;
         treeNode5.right = treeNode7;
         System.out.println(new FindPath().findPath(treeNode10, 22));
