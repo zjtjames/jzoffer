@@ -9,11 +9,12 @@ import base.*;
 
 /**
  * 二叉树中和为某一值的路径 :注意审题，一定要到一个叶结点才能形成一条路径，叶结点是度为0的结点
+ * 用前序遍历的方式访问某一结点，把结点添加到路径上。书184页。
  * 输入一颗二叉树的根结点和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。
  * 路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
  * （注意: 在返回值的list中，数组长度大的数组靠前）
  */
-public class FindPath {
+public class FindPath__ {
 
     public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
@@ -69,6 +70,6 @@ public class FindPath {
         treeNode10.right = treeNode5;
         treeNode5.left = treeNode4;
         treeNode5.right = treeNode7;
-        System.out.println(new FindPath().findPath(treeNode10, 22));
+        System.out.println(new FindPath__().findPath(treeNode10, 22));
     }
 }
