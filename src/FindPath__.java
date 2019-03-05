@@ -44,6 +44,7 @@ public class FindPath__ {
             // 这一步是精髓 只有到了叶结点才sum
             boolean ifLeaf = root.left == null && root.right == null;
             if (ifLeaf && sumList(path) == target) {
+                // 要深复制了以后再add，否则path被改变了以后，result也会改变
                 ArrayList<Integer> listCopy;
                 listCopy = (ArrayList<Integer>)path.clone();
                 result.add(listCopy);
@@ -70,6 +71,14 @@ public class FindPath__ {
         treeNode10.right = treeNode5;
         treeNode5.left = treeNode4;
         treeNode5.right = treeNode7;
-        System.out.println(new FindPath__().findPath(treeNode10, 22));
+//        System.out.println(new FindPath__().findPath(treeNode10, 22));
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        ArrayList<Integer> path = new ArrayList<>();
+        path.add(10);
+        path.add(5);
+        result.add(path);
+        path.remove(1);
+        System.out.println(result);
     }
+
 }
