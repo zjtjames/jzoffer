@@ -19,6 +19,7 @@ public class FindPath {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         ArrayList<Integer> path = new ArrayList<>();
         findAllPath(root, target, path, result);
+        // 匿名内部类实现Comparator接口
         result.sort(new Comparator<ArrayList<Integer>>() {
             @Override
             public int compare(ArrayList<Integer> o1, ArrayList<Integer> o2) {
