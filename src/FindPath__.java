@@ -38,6 +38,7 @@ public class FindPath__ {
 
     public void findAllPath(TreeNode root, int target, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> result) {
         if (root != null) {
+            //前序遍历
             path.add(root.val);
             findAllPath(root.left, target, path, result);
             findAllPath(root.right, target, path, result);
