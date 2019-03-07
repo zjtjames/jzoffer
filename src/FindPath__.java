@@ -36,7 +36,7 @@ public class FindPath__ {
         return result;
     }
 
-    public void findAllPath(TreeNode root, int target, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> result) {
+    private void findAllPath(TreeNode root, int target, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> result) {
         if (root != null) {
             //前序遍历
             path.add(root.val);
@@ -46,15 +46,13 @@ public class FindPath__ {
             boolean ifLeaf = root.left == null && root.right == null;
             if (ifLeaf && sumList(path) == target) {
                 // 要深复制了以后再add，否则path被改变了以后，result也会改变
-                ArrayList<Integer> listCopy;
-                listCopy = (ArrayList<Integer>)path.clone();
-                result.add(listCopy);
+                result.add(new ArrayList<>(path));
             }
             path.remove(path.size() - 1);
         }
     }
 
-    public int sumList(ArrayList<Integer> list) {
+    private int sumList(ArrayList<Integer> list) {
         int sum = 0;
         for (int num : list) {
             sum += num;
