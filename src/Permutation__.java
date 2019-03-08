@@ -29,7 +29,7 @@ public class Permutation__ {
     }
 
     public void permutation_1(char[] chars, int i) {
-        if (i == chars.length - 1) {
+        if (i == chars.length - 1) { //边界条件要记住
             if (!result.contains(new String(chars))) {
                 result.add(new String(chars));
             }
