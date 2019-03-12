@@ -2,8 +2,10 @@
  * created by Zheng Jiateng on 2019/3/12.
  */
 
+import java.util.ArrayList;
+
 /**
- * 和为S的连续正数序列：
+ * 和为S的连续正数序列： 用等差数列求和公式先缩小遍历范围
  *
  * 小明很喜欢数学,有一天他在做数学作业时,要求计算出9~16的和,他马上就写出了正确答案是100。
  * 但是他并不满足于此,他在想究竟有多少种连续的正数序列的和为100(至少包括两个数)。
@@ -13,4 +15,32 @@
  * 输出所有和为S的连续正数序列。序列内按照从小至大的顺序，序列间按照开始数字从小到大的顺序
  */
 public class FindContinuousSequence {
+    public ArrayList<ArrayList<Integer>> FindContinuousSequence(int sum) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        int n = (int) Math.pow(2 * sum, 0.5);
+        for (int i = n; i >1 ; i--) {
+            double temp = (2 * sum / i - i + 1) / 2;
+            if (temp % 1 != 0) {
+                break;
+            } else {
+                ArrayList<Integer> oneResult = new ArrayList<>();
+                int oneSum = 0;
+                for (int j = (int) temp; j < (int) temp + i; j++) {
+                    oneResult.add(j);
+                    oneSum += j;
+                }
+                if (oneSum == sum) {
+                    result.add(new ArrayList<>(oneResult));
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+//        int sum = 100;
+//        int n = (int) Math.pow(2 * sum, 0.5);
+//        System.out.println(n);
+        System.out.println(1.01%1);
+    }
 }
