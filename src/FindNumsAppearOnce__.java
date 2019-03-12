@@ -19,6 +19,10 @@ public class FindNumsAppearOnce__ {
         String result0_bi = Integer.toBinaryString(result);
         char[] chars = result0_bi.toCharArray();
         int len = chars.length;
+        /**
+         * result 是两个数字异或的结果 是1的位 一定是两个数字在该位一个是0一个是1 以result最高一个是1的位是否是1位标准将array分为两组
+         * 则所求两个数字分别处于两组 对两组在进行一次从头到尾的异或即可求出两个数字
+         */
         int flag = (int) Math.pow(2, len - 1);
         ArrayList<Integer> list0 = new ArrayList<>();
         ArrayList<Integer> list1 = new ArrayList<>();
