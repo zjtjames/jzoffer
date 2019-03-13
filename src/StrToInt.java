@@ -49,8 +49,11 @@ public class StrToInt {
     }
 
     public static void main(String[] args) {
-        System.out.println((int)'-');
+//        System.out.println((int)'-');
 //        System.out.println((char)44);
-        System.out.println(new StrToInt().StrToInt("+123456"));
+//        System.out.println(new StrToInt().StrToInt("+123456"));
+        int result = 0;
+        result += 5 * 2.0;
+        System.out.println(result);
     }
 }
