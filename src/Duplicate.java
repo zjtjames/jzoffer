@@ -20,9 +20,6 @@ public class Duplicate {
     // Return value:       true if the input is valid, and there are some duplications in the array number
     //                     otherwise false
     public boolean duplicate(int numbers[],int length,int [] duplication) {
-        if (length == 0) {
-            return false;
-        }
         boolean[] k = new boolean[length];
         for (int i = 0; i < length; i++) {
             if (k[numbers[i]] == true) {
