@@ -29,20 +29,20 @@ public class StrToInt {
         if (len == 0) {
             return 0;
         }
-        if ((int) chars[0] == 45) {
+        if ((int) chars[0] == '-') {
             sign = -1;
-        } else if ((int) chars[0] == 43) {
+        } else if (chars[0] == '+') {
             sign = 1;
-        } else if ((int) chars[0] < 48 || (int) chars[0] > 57) {
+        } else if (chars[0] < '0' || chars[0] > '9') {
             return result;
         } else {
-            result += sign * ((int) chars[0] - 48) * Math.pow(10, len - 1);
+            result += sign * (chars[0] - '0') * Math.pow(10, len - 1);
         }
         for (int i = 1; i < len; i++) {
-            if ((int) chars[i] < 48 || (int) chars[i] > 57) {
+            if (chars[i] < '0' || chars[i] > '9') {
                 return 0;
             } else {
-                result += sign * ((int) chars[i] - 48) * Math.pow(10, len - i - 1);
+                result += sign * (chars[i] - '0') * Math.pow(10, len - i - 1);
             }
         }
         return result;
@@ -55,5 +55,8 @@ public class StrToInt {
         int result = 0;
         result += 5 * 2.0;
         System.out.println(result);
+
+        char c = 'a';
+        System.out.println(c-'0');
     }
 }
