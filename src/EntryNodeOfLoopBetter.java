@@ -12,20 +12,20 @@ public class EntryNodeOfLoopBetter {
         if (pHead == null || pHead.next == null) {
             return null;
         }
-        ListNode listNode1 = pHead;
-        ListNode listNode2 = pHead;
-        listNode1 = listNode1.next;
-        listNode2 = listNode2.next.next;
-        while (listNode1 != listNode2) { // 追上的时候 快的把慢的套圈了 快的走了2x 慢的走了x 2x-x = kn n为环的节点数
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next.next;
+        ListNode node1 = pHead;
+        ListNode node2 = pHead;
+        node1 = node1.next;
+        node2 = node2.next.next;
+        while (node1 != node2) { // 追上的时候 快的把慢的套圈了 快的走了2x 慢的走了x 2x-x = kn n为环的节点数
+            node1 = node1.next;
+            node2 = node2.next.next;
         }
         // 假设直线长y 则让node2从头开始走 走到环入口时 node1共走了kn+y 刚好也到环入口
-        listNode2 = pHead;
-        while (listNode1 != listNode2) {
-            listNode1 = listNode1.next;
-            listNode2 = listNode2.next;
+        node2 = pHead;
+        while (node1 != node2) {
+            node1 = node1.next;
+            node2 = node2.next;
         }
-        return listNode1;
+        return node1;
     }
 }
