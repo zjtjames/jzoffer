@@ -27,10 +27,10 @@ public class DeleteDuplication {
             if (node.val == value) {
                 node = node.next;
                 previous.next = node;
-                continue;
+            } else {
+                previous = node;
+                node = node.next;
             }
-            previous = node;
-            node = node.next;
         }
         return newHead.next;
     }
