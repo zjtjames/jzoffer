@@ -37,10 +37,10 @@ public class PrintAsZhi__ {
             int size = queue.size();
             while (cur < size) { // 这个游标是精髓 它保证了每次把这一层的元素全部出队 把下一层的元素全部入队
                 TreeNode node = queue.remove(0);
-                if (node.left != null) {
+                if (node.left != null) { // 注意此处 要判断左子树不为空才加入队列
                     queue.add(node.left);
                 }
-                if (node.right != null) {
+                if (node.right != null) { // 注意此处 要判断右子树不为空才加入队列
                     queue.add(node.right);
                 }
                 cur++;
