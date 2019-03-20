@@ -28,7 +28,7 @@ public class GetMedian__ {
 //    int size = maxPQ.size() + minPQ.size();
 
 
-    public void Insert(Integer num) {
+    public void Insert(Integer num) { // O(logn)
         int size = maxPQ.size() + minPQ.size();
         if (size == 0) { // 第一个
             maxPQ.offer(num);
@@ -41,7 +41,7 @@ public class GetMedian__ {
         }
     }
 
-    public Double GetMedian() {
+    public Double GetMedian() { // O(1)
         int size = maxPQ.size() + minPQ.size();
         if (size == 0) {
             return null;
