@@ -5,7 +5,7 @@ package sort;
 
 /**
  * 选择排序：O(n方)
- * 不断选择剩余元素中最小者与当前游标交换位置
+ * 不断 选择 剩余元素中最小者与当前游标交换位置
  *
  */
 public class Selection {
