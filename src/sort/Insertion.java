@@ -8,6 +8,7 @@ package sort;
  * 将a[i]与a[0]到a[i-1]中比它大的所有元素依次有序地交换。
  *
  * 插入排序对部分有序的数组十分高效，也很适合小规模数组
+ * 插入排序需要交换的次数与数组中的逆序对数量相等
  */
 public class Insertion {
     public static void sort(int[] a) {
