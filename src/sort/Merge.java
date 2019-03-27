@@ -17,7 +17,7 @@ public class Merge {
         sort(a, 0, n - 1);
     }
 
-    private static void sort(int[] a, int lo, int hi) {
+    private static void sort(int[] a, int lo, int hi) { // 重载
         // 与二分查找很像
         if (lo >= hi) {
             return;
@@ -28,7 +28,7 @@ public class Merge {
         merge(a, lo, mid, hi); // 归并
     }
 
-    private static void merge(int[] a, int lo, int mid, int hi) {
+    private static void merge(int[] a, int lo, int mid, int hi) { // 进行merge的数组 前一半和后一半分别是有序的
         // 将a[lo..mid]和a[mid+1..hi]归并
         int i = lo; // i的范围：lo~mid
         int j = mid + 1; // j的范围：mid+1~hi
