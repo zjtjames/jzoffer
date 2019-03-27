@@ -2,7 +2,8 @@
  * created by Zheng Jiateng on 2019/3/25.
  */
 
-import java.util.*;
+
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 /**
  * 数组中的逆序对: 排序过程实际上就是归并排序
@@ -21,10 +22,62 @@ import java.util.*;
  * 输出
  * 7
  */
+
 public class InversePairs {
+    private int count;
+    private int[] aux;
 
+    public int InversePairs(int [] array) {
+        int n = array.length;
+        aux = new int[n]; // 一次性分配充足的辅助空间
+        int lo = 0;
+        int hi = n - 1;
+        sort(array, lo, hi);
+        return count;
+    }
 
-        public static void main(String[] args) {
-            Object a = new Object();
-            a.equals()
+    private void sort(int[] array, int lo, int hi) { // 归并排序
+        if (lo >= hi) {
+            return;
         }
+        int mid = (lo + hi) / 2;
+        sort(array, lo, mid);
+        sort(array, mid + 1, hi);
+        merge(array, lo, mid, hi);
+    }
+
+    private void merge(int[] array, int lo, int mid, int hi) { // 归并 并计数
+        int i = lo;
+        int j = mid + 1;
+        for (int k = lo; k <= hi; k++) {
+            aux[k] = array[k];
+        }
+        for (int k = lo; k <= hi; k++) {
+            if (i > mid) {
+                array[k] = aux[j++];
+            } else if (j > hi) {
+                array[k] = aux[i++];
+            } else if (aux[i] > aux[j]) {
+                count += (mid + 1 - i);
+                if (count >= 1000000007) {
+                    count %= 1000000007;
+                }
+                array[k] = aux[j++];
+            } else {
+                array[k] = aux[i++];
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] a = {3,4,1,2,5};
+        System.out.println(new InversePairs().InversePairs(a));
+        for (int num : a) {
+            System.out.println(num);
+        }
+    }
+
+}
+
+
+
