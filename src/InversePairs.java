@@ -6,7 +6,7 @@
 import com.sun.org.apache.xpath.internal.SourceTree;
 
 /**
- * 数组中的逆序对: 排序过程实际上就是归并排序
+ * 数组中的逆序对: 排序过程实际上就是归并排序 o(nlogn)
  *
  * 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
  * 输入一个数组,求出这个数组中的逆序对的总数P。并将P对1000000007取模的结果输出。 即输出P%1000000007
@@ -58,7 +58,7 @@ public class InversePairs {
             } else if (j > hi) {
                 array[k] = aux[i++];
             } else if (aux[i] > aux[j]) {
-                count += (mid + 1 - i);
+                count += (mid + 1 - i); // 这一行是统计逆序对的数量的关键
                 if (count >= 1000000007) {
                     count %= 1000000007;
                 }
