@@ -27,6 +27,7 @@ public class Quick {
     }
 
     // 每次partition会排定一个元素，所以至少数组要有两个元素才能partition 所以sort中递归终止条件为lo >= hi
+    // 一般先选择a[lo]作为切分元素，即那个将会被排定的元素
     private static int partition(int[] a, int lo, int hi) {
         int i = lo; // 扫描左指针
         int j = hi + 1; // 扫描右指针
