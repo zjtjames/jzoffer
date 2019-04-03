@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * 例如，如果输入如下4 X 4矩阵： 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
  * 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
  */
-public class PrintMatrix {
+public class PrintMatrix__ {
     private ArrayList<Integer> result = new ArrayList<>();
 
     public ArrayList<Integer> printMatrix(int [][] matrix) {

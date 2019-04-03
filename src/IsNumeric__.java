@@ -10,7 +10,7 @@
  *
  * 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
  */
-public class IsNumeric {
+public class IsNumeric__ {
     public boolean isNumeric(char[] str) {
         String string = String.valueOf(str);
         return string.matches("[+\\-]?\\d*(\\.\\d+)?([eE][+\\-]?\\d+)?");
@@ -19,6 +19,6 @@ public class IsNumeric {
     public static void main(String[] args) {
         String string = "";
         char[] chars = string.toCharArray();
-        System.out.println(new IsNumeric().isNumeric(chars));
+        System.out.println(new IsNumeric__().isNumeric(chars));
     }
 }
