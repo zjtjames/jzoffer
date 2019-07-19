@@ -23,22 +23,25 @@ public class Permutation__ {
         }
         char[] chars = str.toCharArray();
         Arrays.sort(chars);
-        permutation_1(chars, 0);
+        permuteRecursive(chars, 0);
         Collections.sort(result);
         return result;
     }
 
-    public void permutation_1(char[] chars, int i) {
-        if (i == chars.length - 1) { //边界条件要记住
+    // permute chars[begin..end]
+    // invariant: chars[0..begin-1] have been fixed/permuted
+    public void permuteRecursive(char[] chars, int begin) {
+        if (begin == chars.length - 1) { //长度达到了总长 one permutation instance
             if (!result.contains(new String(chars))) {
                 result.add(new String(chars));
             }
             return;
         } else {
-            for (int j = i; j < chars.length; j++) {
-                swap(chars, i, j);
-                permutation_1(chars, i + 1);
-                swap(chars, i, j);
+            for (int j = begin; j < chars.length; j++) {
+                swap(chars, begin, j);
+                permuteRecursive(chars, begin + 1);
+                // reset
+                swap(chars, begin, j);
             }
         }
     }

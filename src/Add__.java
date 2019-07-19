@@ -22,6 +22,6 @@ public class Add__ {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Add__().Add(2,4));
+        System.out.println(new Add__().Add(2,-4));
     }
 }

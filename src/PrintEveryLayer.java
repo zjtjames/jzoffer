@@ -5,6 +5,8 @@
 import base.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 把二叉树打印成多行: 与按之字形顺序打印二叉树几乎完全一样 注意4处注释即可
@@ -19,6 +21,7 @@ public class PrintEveryLayer {
             return layers;
         }
         ArrayList<TreeNode> queue = new ArrayList<>();
+        Deque<TreeNode> deque = new LinkedList<>();
         queue.add(pRoot); // 注意 层序遍历循环开始前要先把根结点加入队列 再开始循环
         while (!queue.isEmpty()) { //注意 循环条件应为队列不为空
             ArrayList<Integer> layer = new ArrayList<>();

@@ -4,8 +4,6 @@
 package sort;
 
 
-import java.util.Collections;
-
 /**
  * 快速排序： O(nlogn) 分治 原地排序 不需要辅助空间
  * 当两个子数组都有序时数组也就自然有序了，递归发生在处理整个数组（partition）之后
