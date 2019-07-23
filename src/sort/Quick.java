@@ -12,7 +12,7 @@ package sort;
 public class Quick {
 
     private static void quickSort(int[] nums, int lo, int hi) {
-        if (lo < hi) {
+        if (lo < hi) { // 这个if条件不能漏
             // 找寻基准数据的正确索引
             int index = findIndex(nums, lo, hi);
             // 进行递归对index之前和之后的数组进行相同的操作使整个数组变成有序
