@@ -12,12 +12,10 @@ package sort;
 public class Quick {
 
     private static void quickSort(int[] nums, int lo, int hi) {
-
         if (lo < hi) {
             // 找寻基准数据的正确索引
             int index = findIndex(nums, lo, hi);
-
-            // 进行迭代对index之前和之后的数组进行相同的操作使整个数组变成有序
+            // 进行递归对index之前和之后的数组进行相同的操作使整个数组变成有序
             quickSort(nums, lo, index - 1);
             quickSort(nums, index + 1, hi);
         }
@@ -37,7 +35,6 @@ public class Quick {
             nums[hi] = nums[lo];
         }
         // 跳出循环时low和high相等,此时的low或high就是tmp的正确索引位置
-        // 由原理部分可以很清楚的知道low位置的值并不是tmp,所以需要将tmp赋值给arr[low]
         nums[lo] = tmp;
         return lo; // 返回tmp的正确位置
     }
