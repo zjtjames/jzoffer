@@ -19,7 +19,7 @@ public class heap {
         for (int i = (last - 1) / 2; i >= 0; i--) {
             sink(nums, i, last);
         }
-        // 堆排序 把堆顶元素与last元素换位 缩小数组大小 sink()
+        // 堆排序 把堆顶元素与last元素交换 last减1 sink()
         while (last > 0) {
             exchange(nums, 0, last--);
             sink(nums, 0, last);
