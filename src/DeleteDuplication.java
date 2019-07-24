@@ -12,26 +12,24 @@ import base.ListNode;
  */
 public class DeleteDuplication {
     public ListNode deleteDuplication(ListNode pHead) {
-        if (pHead == null) {
-            return null;
-        }
-        int value = pHead.val - 1;
-        ListNode newHead = new ListNode(value);
-        newHead.next = pHead;
-        ListNode node = newHead;
-        ListNode previous = newHead;
-        while (node!= null) {
-            if (node.next != null && node.next.val == node.val) {
-                value = node.val;
-            }
-            if (node.val == value) {
-                node = node.next;
-                previous.next = node;
-            } else {
-                previous = node;
-                node = node.next;
+        if (pHead==null || pHead.next==null){return pHead;}
+        ListNode Head = new ListNode(0);
+        Head.next = pHead;
+        ListNode pre  = Head;
+        ListNode last = Head.next;
+        while (last!=null){
+            if(last.next!=null && last.val == last.next.val){
+                // 找到最后的一个相同节点
+                while (last.next!=null && last.val == last.next.val){
+                    last = last.next;
+                }
+                pre.next = last.next;
+                last = last.next;
+            }else{
+                pre = pre.next;
+                last = last.next;
             }
         }
-        return newHead.next;
+        return Head.next;
     }
 }
