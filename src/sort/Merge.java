@@ -11,41 +11,35 @@ package sort;
 public class Merge {
     private static int[] aux; // 归并需要的辅助数组
 
-    public static void sort(int[] a) {
-        int n = a.length;
+    public static void sort(int[] nums) {
+        int n = nums.length;
         aux = new int[n]; // 一次性分配空间
-        sort(a, 0, n - 1);
+        sort(nums, 0, n - 1);
     }
 
-    private static void sort(int[] a, int lo, int hi) { // 重载
+    private static void sort(int[] nums, int lo, int hi) { // 重载
         // 与二分查找很像
-        if (lo >= hi) {
-            return;
+        if (lo < hi) {
+            int mid = (lo + hi) / 2;
+            sort(nums, lo, mid); // 将左半边排序
+            sort(nums, mid + 1, hi); // 将右半边排序
+            merge(nums, lo, mid, hi); // 归并
         }
-        int mid = (lo + hi) / 2;
-        sort(a, lo, mid); // 将左半边排序
-        sort(a, mid + 1, hi); // 将右半边排序
-        merge(a, lo, mid, hi); // 归并
     }
 
-    private static void merge(int[] a, int lo, int mid, int hi) { // 进行merge的数组 前一半和后一半分别是有序的
+    private static void merge(int[] nums, int lo, int mid, int hi) { // 进行merge的数组 前一半和后一半分别是有序的
         // 将a[lo..mid]和a[mid+1..hi]归并
         int i = lo; // i的范围：lo~mid
         int j = mid + 1; // j的范围：mid+1~hi
-        // 一定要每次归并都拷贝新的a进辅助数组
-        for (int k = lo; k <= hi; k++) {
-            aux[k] = a[k];
+        int k = 0;
+        while (i <= mid && j <= hi) {
+            if (nums[i] < nums[j]) aux[k++] = nums[i++];
+            else aux[k++] = nums[j++];
         }
-        for (int k = lo; k <= hi; k++) {
-            if (i > mid) {
-                a[k] = aux[j++];
-            } else if (j > hi) {
-                a[k] = aux[i++];
-            } else if (aux[i] < aux[j]) {
-                a[k] = aux[i++];
-            } else {
-                a[k] = aux[j++];
-            }
+        while (i <= mid) aux[k++] = nums[i++];
+        while (j <= hi) aux[k++] = nums[j++];
+        for (int l = 0; l < k; l++) {
+            nums[lo + l] = aux[l];
         }
     }
 
